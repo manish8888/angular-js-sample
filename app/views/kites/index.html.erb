@@ -1,0 +1,25 @@
+<h1>Listing kites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kites.each do |kite| %>
+      <tr>
+        <td><%= link_to 'Show', kite %></td>
+        <td><%= link_to 'Edit', edit_kite_path(kite) %></td>
+        <td><%= link_to 'Destroy', kite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kite', new_kite_path %>

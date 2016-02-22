@@ -1,0 +1,21 @@
+<h1>listing All the keywords</h1>
+<% @sites = Site.all %>
+<table class="table table-bordered">
+
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+       <% @sites.each do |site|%>
+      <tr>
+        <td><%=sample_helper_metho(site.id)%>
+        <td><%=site.id%> </td>
+        <td><%=site.name%> </td>
+        <td><%=link_to "EDIT",edit_site_path(site),remote:'true'%> </td>
+        <td><%=link_to "DELETE",site_path(site),remote:'true',method: :delete, data: {confirm: 'Are you sure?'}%></td>
+      </tr>
+
+  <%end%>
+</table>

@@ -1,0 +1,22 @@
+<%# @site ||= Site.new %>
+
+<%=simple_form_for(@site, remote: true, html: {id: 'form_sites'}) do |f| %>
+
+    <div class="form-group">
+      <%=f.input :name, input_html: {class: 'form-control col-xs-5'}, placeholder: 'Enter Site'%>
+    </div>
+
+    <div class='btn-group pull-right' id='site_btn'>
+      <span>
+          <%= f.submit 'RESET', class: 'custom btn btn-default', id: 'reset_site' %>
+        <%= f.submit 'SAVE' , class: 'custom btn btn-default', id: 'save_site'  %>
+      </span>
+    </div>
+<%end%>
+
+<!-- 
+<script>
+ $('#reset_sites').click(function() {
+ $('#form_sites')[0].reset();
+});
+</script> -->
