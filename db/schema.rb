@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223030908) do
+ActiveRecord::Schema.define(version: 20160227055159) do
 
   create_table "accounts", force: true do |t|
     t.integer  "supplier_id"
@@ -65,6 +65,22 @@ ActiveRecord::Schema.define(version: 20160223030908) do
     t.datetime "updated_at"
   end
 
+  create_table "clerks", force: true do |t|
+    t.string   "name"
+    t.integer  "clerk_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "company_id"
+  end
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "company_id"
+  end
+
   create_table "customers", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -94,6 +110,11 @@ ActiveRecord::Schema.define(version: 20160223030908) do
   create_table "kites", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "multirow_texts", force: true do |t|
+    t.string "type"
+    t.string "name"
   end
 
   create_table "orders", force: true do |t|
@@ -169,6 +190,14 @@ ActiveRecord::Schema.define(version: 20160223030908) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_api_authentication_credentials", force: true do |t|
+    t.string   "user_name"
+    t.string   "password"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_details", force: true do |t|

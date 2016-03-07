@@ -1,3 +1,3 @@
 class Kite < ActiveRecord::Base
-	validates presence:true
+	# validates presence:true
 end

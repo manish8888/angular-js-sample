@@ -5,6 +5,12 @@ class KitesController < ApplicationController
   # GET /kites.json
   def index
     @kites = Kite.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render xml: @kites}
+      format.json { render json: @kites}
+    end
+
   end
 
   # GET /kites/1

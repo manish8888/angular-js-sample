@@ -1,7 +1,12 @@
 Fastrack14012016::Application.routes.draw do
+  
+  resources :multirow_texts
   resources :kites
 
   resources :categories
+  get '/check_redis_status', to: 'user_api_authentication_credentials#check_redis_status'
+
+  
 
   resources :products,:users,:sites
 

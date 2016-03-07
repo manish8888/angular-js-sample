@@ -1,0 +1,2 @@
+class DmDnet < MultirowText
+end
